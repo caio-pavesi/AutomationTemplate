@@ -29,6 +29,29 @@
             "label": "Create folders",
             "type": "shell",
             "command": "mkdir App/Assets; mkdir App/Tests"
+        },
+        
+        {
+            "label": "Build production version",
+            "dependsOn": ["Format code", "Create requirements.txt file"],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "Format code",
+            "type": "shell",
+            "command": "black .",
+        },
+        {
+            "label": "Create requirements.txt file",
+            "type": "shell",
+            "command": "pipreqs . --force --ignore .venv,.vscode"
         }
     ]
 }
