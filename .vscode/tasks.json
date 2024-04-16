@@ -1,0 +1,34 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build development environment",
+            "dependsOn": ["Create environment", "Activate environment and Install requirements"],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "Create environment",
+            "type": "shell",
+            "command": "python3 -m venv .venv"
+        },
+        {
+            "label": "Activate environment and Install requirements",
+            "type": "shell",
+            "command": "source .venv/bin/activate; pip3 install -r requirements.txt"
+        },
+        {
+            "label": "Create folders",
+            "type": "shell",
+            "command": "mkdir App/Assets; mkdir App/Tests"
+        }
+    ]
+}
