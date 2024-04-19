@@ -5,7 +5,7 @@
     "tasks": [
         {
             "label": "Build development environment",
-            "dependsOn": ["Create environment", "Activate environment and Install requirements"],
+            "dependsOn": ["Create environment", "Activate environment and Install requirements", "Create folders", "Create files"],
             "dependsOrder": "sequence",
             "group": {
                 "kind": "build",
@@ -29,6 +29,11 @@
             "label": "Create folders",
             "type": "shell",
             "command": "mkdir App/Assets; mkdir App/Tests"
+        },
+        {
+            "label": "Create files",
+            "type": "shell",
+            "command": "echo > App/Config/credentials.py;"
         },
         
         {
