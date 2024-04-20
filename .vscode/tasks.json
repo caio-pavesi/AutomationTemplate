@@ -28,7 +28,7 @@
         {
             "label": "Create folders",
             "type": "shell",
-            "command": "mkdir App/Assets; mkdir App/Tests"
+            "command": "mkdir App/Assets; mkdir App/Data; mkdir App/Tests"
         },
         {
             "label": "Create files",
