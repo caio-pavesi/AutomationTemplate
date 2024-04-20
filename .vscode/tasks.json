@@ -33,7 +33,7 @@
         {
             "label": "Create files",
             "type": "shell",
-            "command": "echo > App/Config/credentials.py;"
+            "command": "echo '\"\"\"\nThis is better than using a .env file:\n- Variables of any type\n- No usage of 3rd party lib\n- No conflict with global system variabels\n- Easy import with `from Config.credentials import EXAMPLE`\n\"\"\"\n\nEXAMPLE: str = \"abcd-1234\"' > App/Config/credentials.py;"
         },
         
         {
